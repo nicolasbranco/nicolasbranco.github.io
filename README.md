@@ -6,3 +6,6 @@ This is my personal website hosted by [GitHub Pages](https://pages.github.com/).
 
 - Update website icon to be rounded
 - change from horizontal-split to vertical-split depending on page width
+- add animation on hover
+- hello on same color as text (only change to orange on hover)
+- select between dark and light mode

@@ -1,15 +1,10 @@
 /* base definitions used in all css*/
 :root {
-  --background-left: #222831;
-  --background-right: #eeeeee;
-  --text-left: #eeeeee;
-  --text-right: #393e46;
-  --icons-hover: #d65a31;
-  /* --background-left: #222831;
-  --background-right: #eeeeee;
-  --text-left: #d65a31;
-  --text-right: #393e46;
-  --icons-hover: #d65a31; */
+  --background-left: #181D23;
+  --background-right: #1F2022;
+  --text-left: #ADA7A0;
+  --text-right: #ADA7A0;
+  --icons-hover: #CB613D;
   font-family: 'Open Sans', sans-serif;
   text-align: center;
 }
