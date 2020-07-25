@@ -1,87 +1,23 @@
 /* base definitions used in all css*/
 :root {
-  --background-left: #222831;
-  --background-right: #eeeeee;
-  --text-left: #eeeeee;
-  --text-right: #393e46;
-  --icons-hover: #d65a31;
-  /* --background-left: #222831;
-  --background-right: #eeeeee;
-  --text-left: #d65a31;
-  --text-right: #393e46;
-  --icons-hover: #d65a31; */
+  /* colors */
+  --background-1: #181D23;
+  --background-2: #1F2022;
+  --text-1: #ADA7A0;
+  --text-2: #ADA7A0;
+  --icons-hover: #e7e2dc;
+   /* other configs */
+  --margin: 2rem;
+  /* fonts */
   font-family: 'Open Sans', sans-serif;
   text-align: center;
 }
- 
-/* selects horizontal or vertical division depending on width of page*/
 
-/* Split the screen in half horizontally*/
-.horizontal_split {
-  height: 100%;
-  width: 50%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
-
-/* Split the screen in vertically */
-.vertical_split {
-  height: 50%;
-  width: 100%;
-  position: fixed;
-  z-index: 0;
-  top: 0;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
-
-/* Control the left side */
-.left {
-  left: 0;
-  background-color: var(--background-left);
-  color: var(--text-left);
-}
-
-/* Control the right side */
-.right {
-  right: 0;
-  background-color: var(--background-right);
-  color: var(--text-right);
-}
-
-/* To be added */
-/* upper and lower divisions */
-
-/* upper-part */
-/* .upper {
-  left: 0;
-  background-color: #111;
-} */
-
-/* lower-part */
-/* .lower {
-  right: 0;
-  background-color: red;
-} */
-
-/* If you want the content centered horizontally and vertically */
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-/* Style the image inside the centered container, if needed */
-.centered img {
-  image-orientation: from-image;
-  border-radius: 50%;
-  margin: 1.25rem auto 0 auto;
-  width: 15rem;
+/* general config */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -89,24 +25,99 @@ h1 {
   font-size: 2rem;
 }
 
-p {
+.bio {
   font-size: 1.1rem;
   margin: 0;
+}
+
+.subtitle {
+  margin-top: 5rem;
+  margin-bottom: 1rem;
 }
 
 /* style icons */
 .socials a {
   color: var(--text-right);
   display: inline-block;
+
   font-family: "fontello";
   font-size: 2.5rem;
   font-style: normal;
-  margin: .7rem;
+
+  margin: 1rem;
+  margin-top: var(--margin);
 }
 
-/* changes appearance on hover */
+/* changes icons appearance on hover */
 .socials a:hover{
   transform: scale(1.1) rotate(10deg);
   color: var(--icons-hover);
   cursor: pointer;
 }
+
+/* –––––––––––--– CONTAINERS –––––––––––--–*/
+
+/* base wrapper */
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-flow: row wrap;
+}
+
+/* common for both main divisions */
+.wrapper div {
+  flex: 1;
+}
+
+/* left or top part */
+.first-half {
+  background: var(--background-1);
+
+  /* subflex to store image and welcome text*/
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* profile image */
+.first-half img {
+  /* separation to other parts  */
+  margin: var(--margin);
+
+  /* image config */
+  image-orientation: from-image;
+  border-radius: 100%;
+  width: 15rem;
+}
+
+/* welcome text */
+.first-half h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  color: var(--text-1);
+}
+
+/* right or bottom part */
+.second-half {
+  /* color coding */
+  background: var(--background-2);
+  color: var(--text-2);
+
+  /* subflex to store image and welcome text*/
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+/* portrait mode - when vertical size is small or in phone/tablet */
+@media only all and (orientation: portrait){
+  .wrapper{
+    flex-direction: column;
+  }
+  .subtitle {
+    margin-top: 0rem;
+  }
+}
+
+
